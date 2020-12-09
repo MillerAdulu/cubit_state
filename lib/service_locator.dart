@@ -5,8 +5,8 @@ GetIt locator = GetIt.instance;
 
 void setUpServiceLocator() {
   // TODO: Get it to work as intended
-  // I have to do this
-  locator.allowReassignment = true;
+  // I have to enable this
+  // locator.allowReassignment = true;
   locator.registerLazySingleton<GetIngredientsCubit>(
     () => GetIngredientsCubit(),
   );
