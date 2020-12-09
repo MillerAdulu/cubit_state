@@ -21,8 +21,9 @@ class GetIngredientsCubit extends Cubit<GetIngredientsState> {
       emit(GetIngredientsState.loading());
 
       await Future.delayed(Duration(seconds: 3));
+      final _results = getIngredients(name);
 
-      emit(GetIngredientsState.loaded(getIngredients(name)));
+      emit(GetIngredientsState.loaded(_results));
     } catch (e) {
       emit(GetIngredientsState.error(e.toString()));
     }
@@ -34,7 +35,6 @@ List<String> getIngredients(String name) {
     'Ugali': ['Water', 'Maize Flour'],
     'Rice': ['Water', 'Rice'],
   };
-
 
   return _ingredients.values.toList()[_ingredients.keys.toList().indexOf(name)];
 }
