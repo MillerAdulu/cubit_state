@@ -21,6 +21,14 @@ class _IngredientsState extends State<Ingredients> {
   }
 
   @override
+  void dispose() {
+    // TODO: Get it to work as intended
+    // To get it to work as expected, I have to call this as I dispose the screen to reinitialize
+    // setUpServiceLocator();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

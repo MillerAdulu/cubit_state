@@ -4,6 +4,9 @@ import 'package:cubit_state/cubit/get_ingredients_cubit.dart';
 GetIt locator = GetIt.instance;
 
 void setUpServiceLocator() {
+  // TODO: Get it to work as intended
+  // I have to do this
+  locator.allowReassignment = true;
   locator.registerLazySingleton<GetIngredientsCubit>(
     () => GetIngredientsCubit(),
   );
